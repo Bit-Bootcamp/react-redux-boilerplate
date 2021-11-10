@@ -23,8 +23,8 @@ export default function TheNavbar() {
             <Nav.Link as={Link} to="/profile">
               Profile
             </Nav.Link>
-            <Nav.Link as={Link} to="/memes">
-              Dank memes
+            <Nav.Link as={Link} to="/login">
+              login
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
