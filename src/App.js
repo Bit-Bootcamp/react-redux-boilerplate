@@ -12,14 +12,22 @@ import { useSelector } from "react-redux";
 
 function App() {
   const theme = useSelector((state) => state.theme.value);
+
   return (
-    <div
-      className="App"
-      style={{ backgroundColor: theme.backgroundColor, color: theme.textColor }}
-    >
+    <div className="App">
       <TheNavbar />
-      <p> Background Color: {theme.backgroundColor}</p>
-      <p> Text Color: {theme.textColor}</p>
+      {/* <p> Background Color: {theme.backgroundColor}</p>
+
+      <p
+        style={{
+          backgroundColor: theme.backgroundColor,
+          color: theme.textColor,
+        }}
+      >
+        {" "}
+        Text Color: {theme.textColor}
+      </p> */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />

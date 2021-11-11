@@ -6,10 +6,10 @@ const initialState = {
 
 const themeSlice = createSlice({
   name: "theme",
-  initialState,
+  initialState: initialState,
   reducers: {
     changeBackground: (state, action) => {
-      state.value.backgroundColor = action.payload;
+      state.value.backgroundColor = action.payload; // immer regaman pe aya ama bkain
     },
     changeText: (state, action) => {
       state.value.textColor = action.payload;

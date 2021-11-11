@@ -7,6 +7,7 @@ export default function ChangeColor() {
   let [text, setText] = useState("black");
 
   const dispatch = useDispatch();
+
   function handleBackground(e) {
     setBackground(e.target.value);
   }

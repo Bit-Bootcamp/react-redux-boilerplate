@@ -23,7 +23,7 @@ export default function TheNavbar() {
             <Nav.Link as={Link} to="/profile">
               Profile
             </Nav.Link>
-            <Nav.Link as={Link} to="/login">
+          <Nav.Link as={Link} to="/login">
               login
             </Nav.Link>
           </Nav>
