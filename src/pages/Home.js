@@ -1,9 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import ChangeColor from "../components/ChangeColor";
-import MainCounter from "../components/MainCounter";
+
 export default function Home() {
-  const user = useSelector((state) => state.user.value);
   return (
     <div>
       {/* <h1> Home page</h1>
@@ -12,8 +9,7 @@ export default function Home() {
       <p>{user.email}</p>
 
       <ChangeColor /> */}
-
-      <MainCounter />
+      Home page
     </div>
   );
 }

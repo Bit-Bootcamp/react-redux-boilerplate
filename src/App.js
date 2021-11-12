@@ -3,35 +3,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import TheNavbar from "./components/TheNavbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Login from "./pages/Login";
+import Categories from "./pages/Categories";
+import Products from "./pages/Products";
+import Register from "./pages/Register";
 
 import "./App.css";
 
-import { useSelector } from "react-redux";
-
 function App() {
-  const theme = useSelector((state) => state.theme.value);
-
   return (
     <div className="App">
+      {/* Navbar always shows no matter which route we're on */}
       <TheNavbar />
-      {/* <p> Background Color: {theme.backgroundColor}</p>
 
-      <p
-        style={{
-          backgroundColor: theme.backgroundColor,
-          color: theme.textColor,
-        }}
-      >
-        {" "}
-        Text Color: {theme.textColor}
-      </p> */}
-
+      {/* Setting up our routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
+
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/products" element={<Products />} />
+        {/* if the URL is /login  , render the Login component */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

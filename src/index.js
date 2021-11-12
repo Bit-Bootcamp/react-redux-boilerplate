@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
+  /* We wrap our app with BrowserRouter for routing (react-router) and Provider for global store(redux) */
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>

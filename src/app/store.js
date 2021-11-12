@@ -1,12 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
-import themeReducer from "../features/themeSlice";
-import countReducer from "../features/countSlice";
+/* When you create a slice, import it here */
+// import countReducer from '../features/TestCounterSlice.js'
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
-    theme: themeReducer,
-    count: countReducer,
+    /* count: countReducer */
   },
 });
