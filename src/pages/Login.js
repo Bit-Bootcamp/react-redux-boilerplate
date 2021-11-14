@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import { login, logout } from "../features/userSlice";
+
 export default function Login() {
-  // our local user state
+  // our local user state - taybat ba componenty login, initial value = object
   const [user, setUser] = useState({});
 
+  const globalUser = useSelector((state) => state.user.value);
+
+  const dispatch = useDispatch();
+
+  // const globalState = useSelector(state => state.state)
   const handleEmail = (e) => {
     const emailValue = e.target.value;
     let newState = { ...user };
@@ -50,10 +57,14 @@ export default function Login() {
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Remember me" />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
+          <Button variant="primary" onClick={() => dispatch(login(user))}>
+            Login
+          </Button>
+          <Button variant="primary" onClick={() => dispatch(logout())}>
+            Logout
           </Button>
         </Form>
+        {globalUser.email}
       </Container>
     </>
   );
