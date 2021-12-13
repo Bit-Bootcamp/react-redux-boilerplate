@@ -1,15 +1,29 @@
 import React from "react";
+import { useGetCategoriesQuery } from "../services/productsApi";
+import CategoryCard from "../components/CategoryCard";
 
 export default function Home() {
-  return (
-    <div>
-      {/* <h1> Home page</h1>
-      <p>{user.name}</p>
-      <p>{user.age}</p>
-      <p>{user.email}</p>
+  const { data, error, isLoading } = useGetCategoriesQuery();
 
-      <ChangeColor /> */}
-      Home page
-    </div>
-  );
+  if (isLoading) {
+    return <p> Loading...</p>;
+  }
+  if (error) {
+    return <p> {error}</p>;
+  }
+  if (data) {
+    return (
+      <div>
+        {data.map((category) => {
+          return (
+            <CategoryCard
+              name={category.name}
+              description={category.description}
+              id={category._id}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }

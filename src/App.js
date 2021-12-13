@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Categories from "./pages/Categories";
 import Products from "./pages/Products";
 import Register from "./pages/Register";
+import CategoryCard from "./components/CategoryCard";
 
 import "./App.css";
 
@@ -25,6 +26,8 @@ function App() {
         {/* if the URL is /login  , render the Login component */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/categories/:id" element={<CategoryCard />} />
+        <Route path="*" element={<p> no routes found</p>} />
       </Routes>
     </div>
   );
